@@ -2,13 +2,23 @@
 import sqlite3
 import pandas as pd                
 import streamlit as st                           
-import numpy as np                             
-import matplotlib.pyplot as plt  
 import os
 from dotenv import load_dotenv
 from datetime import datetime
+from openai import OpenAI
 
-          
+load_dotenv()
+
+# Check ENV variables
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# ----------------------------------------
+if OPENAI_API_KEY:
+    print("Key Successfully Loaded ✅")
+else:
+    print("Key Not Loaded Successfully 😔")
+
+      
 # create sql database
 class Constant:
     NameDatabase = "mymealtracker.db"
@@ -17,7 +27,8 @@ class Constant:
 
 def sql_connect():
     return sqlite3.connect(Constant.NameDatabase)
-    
+
+# Create Database --- 📈📊  
 def createDatabase():
     if Constant.NameDatabase:
         
@@ -39,7 +50,9 @@ def createDatabase():
 
         conn.commit()
         conn.close()
-    
+        
+# Query -- 📖📗
+
 def insert_query(event_timestamp, child_name, meal_type, food, amount_consumed, care_giver):
     conn = sql_connect()
     cursor = conn.cursor()
@@ -54,6 +67,7 @@ def insert_query(event_timestamp, child_name, meal_type, food, amount_consumed, 
     conn.commit()
     conn.close()  
     
+# Meals --🍇🍍🍎
 def load_meals():
     conn = sql_connect()
     df = pd.read_sql_query("SELECT * FROM meals", conn)
@@ -63,7 +77,92 @@ def load_meals():
         df["event_timestamp"] = pd.to_datetime(df["event_timestamp"], errors= "coerce")
     return df
            
-# Streamlit set up 
+# AI Recommendation ---- 🖲️💽🧑🏾‍💻
+
+def get_recommendations(df, child_name=None, meal_type=None, min_percent=70, top_n=3):
+    
+    if df.empty:
+        return pd.DataFrame()
+
+    dfx = df[(df["child_name"] == child_name) & (df["meal_type"] == meal_type)]
+    
+    grouped = (
+        dfx.groupby("food")["amount_consumed"]
+        .mean()
+        .reset_index()
+        .rename(columns = {"amount_consumed":"avg_percent"})   
+    )
+    
+    good = grouped[grouped["avg_percent"] >= min_percent]
+    results = good.sort_values("avg_percent", ascending=False).head(top_n) 
+    return results
+
+# AI RECOMENDATION -- 📦☑️                   
+def ai_recommendation(df, child_name, meal_type):
+    
+    # client = OpenAI()
+    # client = OpenAI(api_key=st.secrets[OPENAI_API_KEY])
+    client = OpenAI(api_key=OPENAI_API_KEY)
+    st.header("AI Food Picker")
+    
+    if df.empty:
+        st.info("No meal data yet. Log some meals first.")
+        return
+    
+    # st.markdown("Make Meals Recommendation Based on the Most Food Eaten by Kiddos")
+    
+    # meal_type = st.selectbox(
+    # "Meal Type", Constant.MealType,
+    # )
+    
+    # child_name = st.selectbox(
+    #             "Child's name",
+    #             Constant.ChildName,
+    #         )
+
+    summary_df = get_recommendations(df,
+                                       child_name=child_name, 
+                                       meal_type= meal_type, 
+                                       min_percent=70, 
+                                       top_n=3
+                                       )
+    foods = summary_df["food"].tolist()
+
+    if len(foods) == 0:
+        st.info("Not enough data yet to make a recommendation for this child and meal type.")
+        return
+
+    elif len(foods) == 1:
+        foods_str = foods[0]
+    elif len(foods) == 2:
+        foods_str = " and ".join(foods)
+    else:
+        foods_str = ", ".join(foods[:-1]) + f" and {foods[-1]}"
+
+
+    prompt = f"""
+    You are a helpful assistant.
+    Return ONE short sentence recommending these foods for a meal.
+
+    Meal type: {meal_type}
+    Foods: {foods_str}
+
+    Rules:
+    - Answer with ONE sentence only.
+    - Do not add extra explanation.
+    """
+
+    response = client.chat.completions.create(
+        model="gpt-4.1-mini",  
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.2,
+        max_tokens=40,
+    )
+
+    return response.choices[0].message.content.strip()
+     
+        
+# Streamlit set up -- 🚣🏾‍♀️🤽🏾‍♀️💦
 def main():
     st.set_page_config(page_title="Kids Meals Database", page_icon="📝")
     
@@ -72,7 +171,7 @@ def main():
     st.title("Log Kid's Data")
     page = st.sidebar.radio(
         "Navigate",
-        ["Log Meal", "History"]
+        ["Log Meal", "History", "AI Recommendation"]
     )
     
     if page == "Log Meal":
@@ -169,7 +268,45 @@ def main():
                 file_name="meals_history.csv",
                 mime="text/csv",
             )
-    
+            
+    elif page == "AI Recommendation":
+        
+        st.header("AI Recommendation")
+
+        data = load_meals()
+        
+        if data.empty:
+            st.info("No meal data yet. Log some meals first.")
+            st.stop()
+
+        # Step 1 — Select child
+        child_name = st.selectbox(
+            "Select Child",
+            Constant.ChildName
+        )
+
+        # Step 2 — Select meal type
+        meal_type = st.selectbox(
+            "Select Meal Type",
+            Constant.MealType
+        )
+
+        # Step 3 — Button to generate recommendation
+        if st.button("Get AI Suggestion"):
+            with st.spinner("Thinking... 🤔🧠"):
+                reply = ai_recommendation(
+                    data, 
+                    child_name=child_name, 
+                    meal_type=meal_type
+                )
+
+                if reply:
+                    st.subheader("AI Suggestion")
+                    st.write(reply)
+        else:
+            st.info("Select the child + meal type, then click the button.")
+                    
+        
 if __name__ == "__main__":
     main()
     

@@ -1,0 +1,101 @@
+event_timestamp,child_name,meal_type,food,amount_consumed,care_giver
+2024-12-31T22:17:43.358646,Essence,dinner,Sandwich,87,Nahja
+2025-01-29T02:30:43.358646,Gabriella,lunch,Pasta,59,Nahja
+2024-12-19T07:38:43.358646,Essence,breakfast,Oatmeal,31,Nahja
+2025-03-14T00:00:43.358646,Gabriella,breakfast,Pasta,55,Gabriel
+2025-10-04T13:17:43.358646,Essence,lunch,Chicken,21,Nahja
+2025-08-30T10:00:43.358646,Gabriella,dinner,Sandwich,78,Gabriel
+2025-11-24T17:33:43.358646,Gabriella,dinner,Yogurt,91,Gabriel
+2025-08-31T22:43:43.358646,Gabriella,breakfast,Pizza,78,Gabriel
+2025-02-08T22:15:43.358646,Essence,breakfast,Sandwich,34,Gabriel
+2025-06-27T12:14:43.358646,Essence,lunch,Sandwich,42,Nahja
+2025-06-09T12:30:43.358646,Gabriella,breakfast,Pasta,21,Nahja
+2024-12-09T13:53:43.358646,Essence,lunch,Pizza,85,Gabriel
+2025-11-25T14:05:43.358646,Gabriella,breakfast,Pasta,30,Nahja
+2024-12-09T19:18:43.358646,Essence,dinner,Rice,90,Nahja
+2025-05-21T03:35:43.358646,Gabriella,breakfast,Oatmeal,13,Gabriel
+2025-02-11T14:50:43.358646,Essence,breakfast,Oatmeal,36,Nahja
+2025-07-16T11:49:43.358646,Essence,lunch,Yogurt,85,Gabriel
+2025-05-26T19:46:43.358646,Essence,breakfast,Cereal,95,Gabriel
+2025-05-07T10:33:43.358646,Gabriella,lunch,Rice,52,Nahja
+2025-07-18T21:22:43.358646,Gabriella,lunch,Yogurt,97,Nahja
+2025-07-31T13:41:43.358646,Gabriella,breakfast,Sandwich,56,Gabriel
+2025-08-29T05:08:43.358646,Gabriella,dinner,Yogurt,61,Nahja
+2025-11-08T00:39:43.358646,Essence,breakfast,Rice,61,Nahja
+2024-12-04T17:12:43.358646,Essence,dinner,Oatmeal,5,Gabriel
+2025-11-09T04:05:43.358646,Gabriella,lunch,Eggs,56,Gabriel
+2025-06-06T12:01:43.358646,Gabriella,breakfast,Pizza,7,Nahja
+2025-02-21T17:37:43.358646,Gabriella,dinner,Cereal,62,Gabriel
+2025-10-03T17:53:43.358646,Essence,lunch,Yogurt,64,Gabriel
+2024-12-05T07:45:43.358646,Gabriella,breakfast,Rice,31,Gabriel
+2025-10-31T00:05:43.358646,Gabriella,lunch,Chicken,68,Gabriel
+2025-03-15T23:17:43.358646,Gabriella,dinner,Sandwich,70,Nahja
+2025-07-07T22:01:43.358646,Gabriella,breakfast,Fruit Bowl,46,Nahja
+2025-08-22T04:51:43.358646,Essence,breakfast,Yogurt,25,Nahja
+2025-07-19T20:56:43.358646,Gabriella,dinner,Pasta,80,Gabriel
+2025-08-13T03:57:43.358646,Gabriella,breakfast,Rice,100,Nahja
+2024-12-20T14:48:43.358646,Gabriella,lunch,Eggs,0,Nahja
+2025-08-11T16:36:43.358646,Gabriella,dinner,Yogurt,43,Nahja
+2025-06-27T12:35:43.358646,Essence,lunch,Pasta,2,Nahja
+2025-07-05T03:29:43.358646,Gabriella,breakfast,Sandwich,86,Gabriel
+2025-11-16T17:36:43.358646,Essence,dinner,Yogurt,72,Gabriel
+2025-10-01T09:55:43.358646,Gabriella,dinner,Rice,86,Nahja
+2025-06-19T17:02:43.358646,Essence,dinner,Fruit Bowl,58,Gabriel
+2025-08-25T06:56:43.358646,Essence,breakfast,Sandwich,14,Nahja
+2025-02-03T03:40:43.358646,Gabriella,dinner,Eggs,87,Gabriel
+2025-09-24T04:15:43.358646,Gabriella,breakfast,Fruit Bowl,95,Nahja
+2025-03-19T12:03:43.358646,Gabriella,lunch,Yogurt,38,Nahja
+2025-11-08T11:35:43.358646,Gabriella,dinner,Sandwich,37,Gabriel
+2025-03-28T00:58:43.358646,Gabriella,dinner,Yogurt,6,Nahja
+2025-05-03T11:50:43.358646,Gabriella,breakfast,Yogurt,45,Nahja
+2025-10-18T05:52:43.358646,Essence,dinner,Eggs,70,Nahja
+2025-11-23T12:42:43.358646,Essence,dinner,Fruit Bowl,91,Gabriel
+2025-07-30T05:11:43.358646,Essence,breakfast,Eggs,68,Nahja
+2024-11-28T16:37:43.358646,Essence,breakfast,Sandwich,74,Gabriel
+2025-08-27T18:20:43.358646,Gabriella,dinner,Rice,58,Nahja
+2025-07-28T00:59:43.358646,Essence,breakfast,Sandwich,52,Gabriel
+2025-02-28T15:58:43.358646,Essence,lunch,Oatmeal,93,Gabriel
+2025-03-14T23:46:43.358646,Gabriella,dinner,Rice,6,Nahja
+2025-10-11T06:49:43.358646,Essence,lunch,Fruit Bowl,46,Nahja
+2025-10-09T12:34:43.358646,Gabriella,dinner,Eggs,99,Gabriel
+2025-05-27T21:53:43.358646,Gabriella,lunch,Pasta,35,Nahja
+2025-02-04T09:02:43.358646,Essence,dinner,Pasta,7,Gabriel
+2025-07-09T18:19:43.358646,Essence,breakfast,Cereal,58,Gabriel
+2025-08-02T02:01:43.358646,Essence,dinner,Cereal,30,Nahja
+2025-04-08T03:55:43.358646,Essence,dinner,Oatmeal,46,Gabriel
+2025-02-19T09:02:43.358646,Gabriella,dinner,Yogurt,37,Gabriel
+2025-02-10T13:38:43.358646,Gabriella,lunch,Cereal,95,Gabriel
+2025-11-20T05:01:43.358646,Gabriella,lunch,Chicken,19,Gabriel
+2025-10-03T16:35:43.358646,Essence,dinner,Cereal,63,Nahja
+2025-07-11T05:54:43.358646,Gabriella,breakfast,Yogurt,18,Gabriel
+2025-01-01T10:45:43.358646,Essence,lunch,Fruit Bowl,90,Nahja
+2025-06-30T20:49:43.358646,Essence,dinner,Fruit Bowl,91,Nahja
+2025-11-09T09:17:43.358646,Gabriella,dinner,Eggs,24,Nahja
+2025-06-23T17:57:43.358646,Gabriella,breakfast,Pasta,0,Gabriel
+2025-05-26T23:28:43.358646,Gabriella,breakfast,Pasta,83,Gabriel
+2025-07-27T13:52:43.358646,Gabriella,lunch,Cereal,90,Nahja
+2025-07-11T08:19:43.358646,Gabriella,lunch,Fruit Bowl,59,Gabriel
+2025-10-14T05:56:43.358646,Essence,lunch,Sandwich,31,Nahja
+2025-01-09T13:35:43.358646,Essence,dinner,Fruit Bowl,40,Nahja
+2025-03-22T12:28:43.358646,Gabriella,breakfast,Oatmeal,81,Gabriel
+2025-09-03T19:03:43.358646,Essence,dinner,Fruit Bowl,43,Gabriel
+2025-06-08T14:59:43.358646,Gabriella,dinner,Fruit Bowl,60,Nahja
+2025-07-19T06:32:43.358646,Gabriella,breakfast,Rice,54,Nahja
+2025-07-26T02:08:43.358646,Essence,lunch,Yogurt,60,Nahja
+2024-12-24T14:49:43.358646,Gabriella,breakfast,Pasta,85,Gabriel
+2025-01-08T22:29:43.358646,Gabriella,breakfast,Rice,41,Nahja
+2025-08-31T03:18:43.358646,Gabriella,breakfast,Eggs,69,Gabriel
+2025-11-15T17:48:43.358646,Essence,dinner,Oatmeal,62,Gabriel
+2025-02-25T15:48:43.358646,Gabriella,lunch,Sandwich,90,Gabriel
+2025-03-01T19:31:43.358646,Gabriella,breakfast,Fruit Bowl,95,Nahja
+2025-01-17T10:06:43.358646,Gabriella,lunch,Sandwich,5,Gabriel
+2025-02-07T08:03:43.358646,Gabriella,dinner,Rice,84,Nahja
+2025-03-28T22:15:43.358646,Essence,lunch,Rice,4,Gabriel
+2025-08-16T02:02:43.358646,Essence,dinner,Pasta,65,Gabriel
+2025-10-18T02:34:43.358646,Gabriella,lunch,Yogurt,32,Gabriel
+2025-01-26T19:19:43.358646,Essence,dinner,Sandwich,14,Nahja
+2025-07-01T12:54:43.358646,Essence,lunch,Pizza,44,Nahja
+2025-10-27T01:15:43.358646,Gabriella,dinner,Pizza,14,Nahja
+2025-06-23T14:04:43.358646,Gabriella,dinner,Cereal,53,Nahja
+2025-08-28T11:06:43.358646,Essence,breakfast,Rice,21,Nahja
+2024-12-12T20:23:43.358646,Gabriella,lunch,Chicken,71,Gabriel
